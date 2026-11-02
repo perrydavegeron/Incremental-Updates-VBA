@@ -1,0 +1,58 @@
+JIRA SURVEY STATUS AUTOMATION v2.1 - WINDOWS EXCEL TEST CHECKLIST
+Developer: Perry Dave V. Geron
+
+INSTALLATION
+[ ] Extract ZIP; run installer with Excel closed.
+[ ] Both Ribbon commands appear and are clickable.
+[ ] Reinstall v2 over v1.0.6 and confirm previous XLAM backup exists.
+[ ] VBA editor: Debug > Compile VBAProject produces no compile errors.
+
+GENERATE
+[ ] Generate from RAW DD/MM/YYYY CSV; verify day/month unambiguous.
+[ ] Output retains all prior columns, Summary A-Z, MMM DD dates.
+[ ] Issue Keys are clickable and lead to correct OTS3-* tickets.
+[ ] Stakeholder Remarks exists and is blank for newly generated tickets.
+[ ] Five stages, pending issue fields and overdue logic unchanged.
+
+UPDATE - BASIC
+[ ] Save generated XLSX; type 'Call client Wednesday' under
+    Stakeholder Remarks for issue A, and add a custom Follow-up Notes column.
+[ ] Add a legacy cell Note/Comment to a ticket. Record its Issue Key.
+[ ] Export new JIRA CSV with issue A changed VQ Released to RVQ Available.
+[ ] Add new issue B to export and omit issue C intentionally.
+[ ] Update from the open saved status report, selecting new CSV.
+[ ] Note for issue A survives under same Issue Key after Summary re-sort.
+[ ] Custom Follow-up Notes survives, and Note/Comment remains attached.
+[ ] Issue A status/dates/remarks refresh from JIRA; new issue B is appended.
+[ ] Issue C is retained and displays 'Not in Latest Export'.
+[ ] New issue B's Issue Key hyperlink works and date cells show MMM DD.
+[ ] Total / New / Updated / Unchanged / Missing / runtime counts are correct.
+[ ] Report saves and a full timestamped backup exists in same folder.
+
+UPDATE - SAFETY
+[ ] Duplicate Issue Key in latest export -> update ABORTED, no changes.
+[ ] Duplicate Issue Key in existing report -> update ABORTED, no changes.
+[ ] Blank Issue Key -> update ABORTED, no changes.
+[ ] Missing critical JIRA header -> update ABORTED, no changes.
+[ ] Raw CSV cannot be reopened -> update ABORTED, no date fallback.
+[ ] New JIRA column from export appended after existing user columns.
+[ ] Refresh with no changed source fields -> rows preserved, overdue daily
+    counters refreshed where applicable and Unchanged count is correct.
+[ ] No write permission to backup folder -> update ABORTED, original intact.
+[ ] Existing reports from v1.0.6 update successfully after backup.
+[ ] Existing notes entered inside JIRA-managed remarks columns are migrated
+    to Stakeholder Remarks before testing the refresh.
+
+IMPORTANT: These are MANUAL ACCEPTANCE TESTS, not claims of passing tests.
+
+VERSION 2.1 COLUMN / NOTES TESTS (Windows Excel Required)
+==========================================================
+[ ] Generate: H=Ticket Status, I=HL Comment, J=DM Comment, K=Created.
+[ ] Generate: no additional Stakeholder Remarks column at far right.
+[ ] Write HL and DM notes on ticket A, save, then update with Demo_2.
+[ ] Both notes stay with ticket A after status refresh and Summary sorting.
+[ ] Existing v2.0 report: add Stakeholder Remarks text, save and update.
+[ ] The old text appears in I (HL Comment) after migration; J is blank.
+[ ] KPI cells A1:K5 remain correctly positioned after column migration.
+[ ] A report with a preexisting manual HL Comment is preserved on refresh.
+[ ] Confirm conditional formatting follows shifted status/date columns.

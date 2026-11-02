@@ -1,0 +1,45 @@
+JIRA SURVEY STATUS AUTOMATION - VERSION 2.1
+Developed by Perry Dave V. Geron
+
+VERSION 2.1 - DISPLAY/COMMENTS
+- Renamed Survey Status to Ticket Status in the generated report.
+- Replaced Stakeholder Remarks with HL Comment.
+- Added DM Comment.
+- Set H Ticket Status, I HL Comment, J DM Comment, K Created.
+- Preserves HL and DM comments on updates; both columns are excluded from
+  JIRA-managed fields and never overwritten.
+- Automatically migrates old v2.0 reports after creating a backup,
+  transferring old Stakeholder Remarks into HL Comment.
+- Uses dynamic column references for status formatting and counters.
+- Retained the v2.0 incremental update and v1.0.6 hyperlink rules.
+
+JIRA SURVEY STATUS AUTOMATION - CHANGELOG
+Developed by Perry Dave V. Geron
+
+VERSION 2.1
+-----------
+- Added a second Ribbon button: Update Survey Status.
+- Existing saved Survey Status report serves as the persistent working file.
+- New JIRA export is matched using Issue Key; changed source-managed fields
+  and derived status/overdue columns refresh in place.
+- New Issue Keys are appended without replacing stakeholder-maintained data.
+- The Latest Export Match column flags records omitted from filtered exports.
+- All source rows and existing rows must have distinct nonblank Issue Keys.
+- Backup (timestamped in the report folder) is mandatory before editing.
+- New reports include a dedicated Stakeholder Remarks column for manual notes.
+- Added hidden metadata registry to distinguish JIRA-owned from user columns.
+- Legacy v1.0.6 reports may be refreshed (with safe ownership migration).
+- Refreshed counts and last-updated time are shown at the top.
+- Existing Generate Survey Status function preserved.
+- PowerShell installer now provides Generate + Update buttons and safeguards
+  previous installed XLAM during replacement.
+- All previous status, issue, overdue, date and hyperlink rules retained.
+
+VERSION 1.0.6
+-------------
+- Issue Keys displayed as hyperlinks to https://jira.ehr.com/browse/OTS3-ID.
+
+VERSIONS 1.0.1 THROUGH 1.0.5
+----------------------------
+- Cleaned displayed Custom field (...) headers, arranged Created after
+  Survey Status, fixed VBA quoting and import BOM, improved raw CSV reader.
